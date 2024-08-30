@@ -1,0 +1,48 @@
+package stepDefinition;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class Profile {
+	WebDriver driver;
+	@Given("Practo home page")
+	public void practo_home_page() {
+	    // Write code here that turns the phrase above into concrete actions
+		driver=new ChromeDriver();
+	    driver.get("https://www.practo.com/");
+	    driver.manage().window().maximize();    
+	}
+	@When("I click on login")
+	public void i_click_on_login() {
+	    // Write code here that turns the phrase above into concrete actions
+	    driver.findElement(By.xpath("//a[text()='Login / Signup']")).click();
+	}
+
+	@Then("I enter the valid phone number")
+	public void i_enter_the_valid_phone_number() {
+	    // Write code here that turns the phrase above into concrete actions
+	    driver.findElement(By.xpath("//input[@id='username']")).sendKeys("7358396634");
+	}
+
+	@Then("I enter the valid password")
+	public void i_enter_the_valid_password() {
+	    // Write code here that turns the phrase above into concrete actions
+	    driver.findElement(By.xpath("//input[@id='password']")).sendKeys("123456nag@");
+
+	}
+	@Then("I click on login button")
+	public void i_click_on_login_button() {
+	    // Write code here that turns the phrase above into concrete actions
+		driver.findElement(By.xpath("//input[@id='login']")).click();
+	}
+	@Then("I successfully logged in")
+	public void i_successfully_logged_in() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+}

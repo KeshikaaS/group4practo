@@ -1,0 +1,19 @@
+Feature: Practo
+  @tag1
+  Scenario: Login Successfull
+    Given Practo home page
+    When I click on login
+    Then I enter the valid phone number
+    Then I enter the valid password
+    Then I click on login button
+    Then I successfully logged in
+
+  Scenario:Consult now button
+   Given Practo home page
+    When I click on Video Consult
+    Then I enter valid symptom
+    Then I enter the valid password
+    Then I enter valid mobile number
+    Then I successfully logged in
+   
+   
